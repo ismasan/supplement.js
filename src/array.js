@@ -253,3 +253,17 @@ supplement.defineMethod(Array.prototype, 'pluck', function (n) { "use strict";
     return value
   })
 })
+
+/**
+ * ## Array.prototype.includes
+ * Checks that passed argument is in array.
+ *
+ * @param {member} the element to check in the subject array
+ * @throws {TypeError} when called without a member
+ * @returns {Boolean} true if member is in array, false otherwise
+ */
+supplement.defineMethod(Array.prototype, 'includes', function (n) { "use strict";
+  if (!n) throw new TypeError ()
+  
+  return this.indexOf(n) > -1
+})

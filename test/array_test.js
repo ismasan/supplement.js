@@ -281,3 +281,17 @@ test("pluck throws TypeError if prop name is missing or not a string", function 
     [].pluck(1)
   }, TypeError, "Property name argument must be a string")
 })
+
+test("includes returns true if element is in array", function () {
+  var obj = {name: 'foo'},
+      arr = ["foo", obj, 23]
+
+  equal(arr.includes(obj), true, "should return true")
+  equal(arr.includes(23), true, "should return true")
+})
+
+test("includes returns false if element is not in array", function () {
+  var arr = ["foo", 23]
+
+  equal(arr.includes(24), false, "should return false")
+})
